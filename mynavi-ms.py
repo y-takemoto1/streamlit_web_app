@@ -12,7 +12,7 @@ st.text('ルート確認１')
 url = 'https://mynavi-ms.jp/search/fukuoka/area-all'
 
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
 }
 
 
@@ -47,6 +47,7 @@ if st.button('開始', disabled=st.session_state.processing):
         # ステータスコードをチェック
         response = requests.get(url, headers=headers, allow_redirects=True)
         st.text(f'URL:{url}')
+        st.text(f'response:{response}')
         st.text(f'code:{response.status_code}')
         if response.status_code == 200:
             st.text('ルート確認')
