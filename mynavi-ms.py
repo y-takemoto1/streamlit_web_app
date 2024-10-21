@@ -6,6 +6,7 @@ import re
 import streamlit as st
 import os
 
+st.text('ルート確認１')
 
 # スクレイピングしたいURL（例: 福岡の求人）
 url = 'https://mynavi-ms.jp/search/fukuoka/area-all'
@@ -39,7 +40,7 @@ if 'processing' not in st.session_state:
 if st.button('開始', disabled=st.session_state.processing):
     st.session_state.stop = False
     # 中断ボタン
-
+    st.text('ルート確認２')
     if url:
         # ステータスコードをチェック
         response = requests.get(url, headers=headers)
