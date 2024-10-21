@@ -3,9 +3,7 @@ import openpyxl
 import requests
 from bs4 import BeautifulSoup
 import re
-from openpyxl import Workbook
 import streamlit as st
-import sys
 import os
 
 
