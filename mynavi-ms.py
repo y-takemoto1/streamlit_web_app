@@ -139,9 +139,9 @@ if not os.path.exists(folder_path):
 wb.save("mynavi-ms.xlsx")
 wb.close()
 st.session_state.processing = False
-
+'''
 with open(file_path, 'rb') as f:
     st.download_button(label="Download", data=f, file_name=file_name, mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-
+'''
 if st.button("中断", disabled=st.session_state.processing):
     st.session_state.stop = True
