@@ -126,19 +126,22 @@ if st.button('開始', disabled=st.session_state.processing):
                     break  # 次のページがない場合は終了
             else:
                 st.text('完了しました。')
-                st.text("C:/aggregate/に保存されました。")
+                #st.text("C:/aggregate/に保存されました。")
         else:
             print('リクエストが失敗しました。ステータスコード:', response.status_code)
-
+'''
 # フォルダの有無確認
 if not os.path.exists(folder_path):
     # フォルダ生成
     os.mkdir(folder_path)
-
+'''
 # エクセルファイルを保存
-wb.save(file_path)
+wb.save("mynavi-ms.xlsx")
 wb.close()
 st.session_state.processing = False
+
+with open(file_path, 'rb') as f:
+    st.download_button(label="Download", data=f, file_name=file_name, mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
 
 if st.button("中断", disabled=st.session_state.processing):
     st.session_state.stop = True
