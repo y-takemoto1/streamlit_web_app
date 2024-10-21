@@ -44,7 +44,7 @@ if st.button('開始', disabled=st.session_state.processing):
     st.text('ルート確認２')
     if url:
         # ステータスコードをチェック
-        response = requests.get(url, headers=headers)
+        response = requests.get(url)
         st.text(f'code:{response.status_code}')
         if response.status_code == 200:
             st.text('ルート確認')
