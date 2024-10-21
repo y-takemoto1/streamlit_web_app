@@ -44,6 +44,7 @@ if st.button('開始', disabled=st.session_state.processing):
         # ステータスコードをチェック
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
+            st.text('ルート確認')
             c = 1  # 行数
             j = 1  # ページ数
             while c <= 10:
