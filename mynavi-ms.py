@@ -9,7 +9,7 @@ import os
 st.text('ルート確認１')
 
 # スクレイピングしたいURL（例: 福岡の求人）
-url = 'https://mynavi-ms.jp/search/fukuoka/area-all/job_work_type-2'
+url = 'https://mynavi-ms.jp/search?station_prefectures[]=40&prefecture_line_companies[]=40-6&prefecture_line_company_lines[]=40-6-199'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
