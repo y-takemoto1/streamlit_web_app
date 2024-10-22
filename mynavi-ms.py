@@ -37,7 +37,7 @@ if st.button('開始', disabled=st.session_state.processing):
     if url:
         # ドライバのオプション
         options = ChromeOptions()
-
+        st.text('ルート確認３')
         # option設定を追加（設定する理由はメモリの削減）
         options.add_argument("--headless")
         options.add_argument('--disable-gpu')
@@ -57,6 +57,7 @@ if st.button('開始', disabled=st.session_state.processing):
         c = 1  # 行数
         j = 1  # ページ数
         while c <= 10:
+            st.text('ルート確認４')
             print(f'Processing page {j}...')
             job_cards = driver.find_elements(By.CLASS_NAME, 'job-summary__header')
             table_cards = driver.find_elements(By.CLASS_NAME, 'job-summary-table')
