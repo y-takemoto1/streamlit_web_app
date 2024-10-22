@@ -5,18 +5,16 @@ from bs4 import BeautifulSoup
 import re
 import streamlit as st
 import os
-from fake_useragent import UserAgent
-
 
 st.text('ルート確認１')
 
 # スクレイピングしたいURL（例: 福岡の求人）
-url = 'https://mynavi-ms.jp/search/fukuoka/area-all'
+url = 'https://mynavi-ms.jp/search/fukuoka/area-all/job_work_type-2'
 
-ua = UserAgent()
 headers = {
-    'User-Agent': ua.ie
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0'
 }
+
 
 # エクセルを開く
 wb = openpyxl.Workbook()
