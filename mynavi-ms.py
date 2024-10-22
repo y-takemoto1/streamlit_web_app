@@ -13,7 +13,7 @@ from webdriver_manager.core.os_manager import ChromeType
 from selenium.webdriver.common.by import By
 
 # スクレイピングしたいURL（例: 福岡の求人）
-url = 'https://www.staff-q.co.jp/recruiter'
+url = 'https://mynavi-ms.jp/search/fukuoka/area-all'
 
 # エクセルを開く
 wb = openpyxl.Workbook()
@@ -58,9 +58,8 @@ if st.button('開始', disabled=st.session_state.processing):
         j = 1  # ページ数
         while c <= 10:
             print(f'Processing page {j}...')
-            soup = BeautifulSoup(response.text, 'html.parser')
-            job_cards = soup.find_all('div', class_='job-summary__header')
-            table_cards = soup.find_all('table', class_='job-summary-table')
+            job_cards = driver.find_elements(By.CLASS_NAME, 'job-summary__header')
+            table_cards = driver.find_elements(By.CLASS_NAME, 'job-summary-table')
 
             if not job_cards:
                 print('求人が見つかりませんでした。')
@@ -124,7 +123,7 @@ if st.button('開始', disabled=st.session_state.processing):
                 
                 print('-' * 40)
             # 次のページを探す
-            next_page = soup.find('a', class_='search-pagenation__next')
+            next_page = driver.find_elements(By.CLASS_NAME, 'search-pagenation__next')
             if next_page and 'href' in next_page.attrs:
                 next_url = 'https://mynavi-ms.jp' + next_page['href']
                 driver.get(next_url)
