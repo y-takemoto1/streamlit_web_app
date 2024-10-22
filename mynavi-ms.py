@@ -9,7 +9,7 @@ import os
 st.text('ルート確認１')
 
 # スクレイピングしたいURL（例: 福岡の求人）
-url = 'https://search.yahoo.co.jp/realtime'
+url = 'https://mynavi-ms.jp/search/fukuoka/area-all/job_work_type-2'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36'
@@ -51,7 +51,7 @@ if st.button('開始', disabled=st.session_state.processing):
         st.text(f'response:{response}')
         st.text(f'code:{response.status_code}')
         if response.status_code == 200:
-            st.text('ルート確認')
+            st.text('ルート確認3')
             c = 1  # 行数
             j = 1  # ページ数
             while c <= 10:
