@@ -61,6 +61,8 @@ if st.button('開始', disabled=st.session_state.processing):
             print(f'Processing page {j}...')
             job_cards = driver.find_elements(By.CLASS_NAME, 'job-summary__header')
             table_cards = driver.find_elements(By.CLASS_NAME, 'job-summary-table')
+            st.text(f'job_cards : {job_cards}')
+            st.text(f'table_cards : {table_cards}')
 
             if not job_cards:
                 print('求人が見つかりませんでした。')
